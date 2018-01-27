@@ -3,7 +3,7 @@ VOLUME /tmp
 #定义两个变量，指定jar包的名称和项目名称；
 ARG JAR_FILE_NAME=app.jar
 ARG PROJECT_DIR=demo
-ADD / ${PROJECT_DIR}/
+ADD ../../../ ${PROJECT_DIR}/
 
 RUN wget http://apache-mirror.rbc.ru/pub/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
 RUN tar xzvf apache-maven-3.3.9-bin.tar.gz
