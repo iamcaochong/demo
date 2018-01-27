@@ -44,13 +44,12 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+            <!--如果用maven执行docker build，下面的插件就用不到
 			<plugin>
 				<groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-
 				<configuration>
                     <imageName>${docker.image.prefix}/${project.artifactId}1</imageName>
-                    <!-- 指定Dockerfile所在的路径 -->
                     <dockerDirectory>${basedir}/src/main/resources</dockerDirectory>
                     <resources>
                         <resource>
@@ -63,12 +62,11 @@
                         <PROJECT_DIR>${project.artifactId}</PROJECT_DIR>
                         <JAR_FILE_NAME>${project.build.finalName}.jar</JAR_FILE_NAME>
                     </buildArgs>
-                    <!-- 以下两行是为了docker push到DockerHub使用的。 -->
                     <serverId>docker-hub</serverId>
                     <registryUrl>https://index.docker.io/v1/</registryUrl>
 				</configuration>
-
 			</plugin>
+            -->
 		</plugins>
 	</build>
 
