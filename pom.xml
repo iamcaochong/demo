@@ -60,7 +60,8 @@
                         </resource>
                     </resources>
                     <buildArgs>
-                        <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+                        <PROJECT_DIR>${project.artifactId}</PROJECT_DIR>
+                        <JAR_FILE_NAME>${project.build.finalName}.jar</JAR_FILE_NAME>
                     </buildArgs>
                     <!-- 以下两行是为了docker push到DockerHub使用的。 -->
                     <serverId>docker-hub</serverId>

@@ -8,7 +8,7 @@ public class HelloWorldController {
 
     @RequestMapping("/")
     public String helloworld (String name){
-        String result = String.format("hello, %s", name);
+        String result = String.format("hello, i am %s", name);
         System.out.print(result);
         return result;
     }
