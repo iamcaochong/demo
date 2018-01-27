@@ -3,6 +3,8 @@ VOLUME /tmp
 #定义两个变量，指定jar包的名称和项目名称；
 ARG JAR_FILE_NAME=demo-0.0.1-SNAPSHOT.jar
 ARG PROJECT_DIR=demo
+ENV JAR_FILE_NAME=${JAR_FILE_NAME}
+ENV PROJECT_DIR=${PROJECT_DIR}
 ADD / ${PROJECT_DIR}/
 
 RUN wget http://apache-mirror.rbc.ru/pub/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
@@ -17,4 +19,4 @@ RUN cd ${PROJECT_DIR} && mvn package
 RUN cd ${PROJECT_DIR} && rm -rf /src
 
 
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","${PROJECT_DIR}/target/${JAR_FILE_NAME}"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","$PROJECT_DIR/target/$JAR_FILE_NAME"]
