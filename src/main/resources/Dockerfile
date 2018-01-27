@@ -13,7 +13,8 @@ RUN export PATH=/usr/local/bin/apache-maven-3.3.9/bin:$PATH
 RUN ln -s /usr/local/bin/apache-maven-3.3.9/bin/mvn /usr/local/bin/mvn
 #RUN ls -l /usr/local/bin
 RUN echo $PATH
-RUN cd ${PROJECT_DIR} && mvn package && rm -rf /src
+RUN cd ${PROJECT_DIR} && mvn package
+RUN cd ${PROJECT_DIR} && rm -rf /src
 
 
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","${PROJECT_DIR}/target/${JAR_FILE_NAME}"]
