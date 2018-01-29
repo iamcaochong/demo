@@ -1,4 +1,4 @@
-FROM maven:3-jdk-8-alpine
+FROM maven:3.5.2-jdk-8-alpine
 MAINTAINER caochong iamcaochong@foxmail.com
 VOLUME /tmp
 #定义两个变量，指定jar包的名称和项目名称；
