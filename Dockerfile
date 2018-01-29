@@ -6,7 +6,7 @@ ARG JAR_FILE_NAME=demo-0.0.1-SNAPSHOT.jar
 ARG PROJECT_DIR=demo
 ADD / ${PROJECT_DIR}/
 
-RUN cd ${PROJECT_DIR} && ls && mvn package \
+RUN cd ${PROJECT_DIR} && ls && mvn package
 RUN cp -f ${PROJECT_DIR}/target/${JAR_FILE_NAME} app.jar && rm -rf ${PROJECT_DIR}
 EXPOSE 29000
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","app.jar"]
