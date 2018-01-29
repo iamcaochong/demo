@@ -8,5 +8,5 @@ ADD / ${PROJECT_DIR}/
 
 RUN cd ${PROJECT_DIR} && ls && mvn package
 RUN cp -f ${PROJECT_DIR}/target/${JAR_FILE_NAME} app.jar && rm -rf ${PROJECT_DIR}
-EXPOSE 29000
+EXPOSE 8080
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","app.jar"]
