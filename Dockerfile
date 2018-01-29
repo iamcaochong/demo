@@ -19,4 +19,4 @@ RUN cd ${PROJECT_DIR} && mvn package
 RUN cd ${PROJECT_DIR} && rm -rf /src
 
 
-ENTRYPOINT ["java","-c","-Djava.security.egd=file:/dev/./urandom","-jar","$PROJECT_DIR/target/$JAR_FILE_NAME"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","-c","$PROJECT_DIR/target/$JAR_FILE_NAME"]
