@@ -17,4 +17,4 @@ RUN cd ${PROJECT_DIR} && mvn package
 RUN cp -f ${PROJECT_DIR}/target/${JAR_FILE_NAME} app.jar && rm -rf ${PROJECT_DIR}
 
 
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","-c","app.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","app.jar"]
